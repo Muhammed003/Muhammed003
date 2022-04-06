@@ -1,0 +1,52 @@
+# ! extra-task 1
+# ? extra-task 1
+
+# a = [set(), set(), set()]
+# inp1 = input()
+# inp2 = int(input())
+# for i in range(len(a)):
+#     if inp2 == i + 1:
+#         a[i].add(inp1)
+#     else:
+#         a[i].add('default value')
+# print(a)
+
+# ! extra-task 2
+# ? extra-task 2
+# set1 = {i for i in range(0, 10, 2)}
+# set2 = {i for i in range(0|1, 10, 2)}
+# if not set1.intersection(set2):
+#     print('Множества не пересекаются!')
+# else:
+#     print("Множества пересекаются!")
+# print(set2)
+# ! task 13
+
+"""
+? Задание 13
+"""
+robert = {5, 7, 11, 10, 28}
+kail = {1, 7, 14, 8, 22}
+merri = {19, 20, 3, 11, 10}
+z = robert & kail & merri
+if not kail.isdisjoint(robert) and not kail.isdisjoint(robert):
+    print("kail merri")
+elif not merri.isdisjoint(robert):
+    print("merri")
+
+elif not kail.isdisjoint(robert):
+    print("kail")
+
+else:
+    print("no one")
+
+# ! task 14
+
+"""
+? Задание 14
+"""
+# tilek = {'Dodo', 'ImperiaPizza', "FreshBox"}
+# timur = {"OchakKebab", "FreshBox"}
+# alexander = {"KFC", "FreshBox"}
+# elina = {'Dodo', 'ImperiaPizza', "FreshBox", "KFC"}
+# print(tilek & timur & alexander & elina)
