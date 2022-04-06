@@ -49,3 +49,45 @@
 #     else:
 #         new_dict.update({k: v})
 # print(new_dict)
+
+# ! Task 11
+# a = {'apple': 0.40, 'orange': 0.35, 'banana': 0.25}
+# my_list = {}
+# for k, v in list(a.items()):
+#     my_list.update({k: v/5})
+# print(my_list)
+
+# ! Task 12
+# a = {'apple': 2, 'orange': 5, 'banana': 10}
+# l = {}
+# for k, v in a.items():
+#     if v % 2 == 0:
+#         del k
+#     else:
+#          l.update({k:v})
+# print(l)
+# ! Task 13
+# a = {'a': 1, 'b': 2, 'c': 3}
+# new_dict = {}
+# for key, val in a.items():
+#     new_dict.update({val: key})
+# print(new_dict)
+# ! Task 14
+# a = {'a': 3, 'b': 2}
+# print(sum(list(a.values())))
+# ! Task 15
+# a1 = {}
+# a2 = {}
+# a3 = {}
+# a1["a1"] = "red"
+# a2.update({"a2": "blue"})
+# a3.setdefault("a3", "none")
+# print(a1)
+# !  Extra - Task 1
+
+# a = {'a': 10, 'b': 9, 'c': 3}
+# s = 1
+# result = (list(a.values()))
+# for k, v in a.items():
+#     s *= v
+# print(s)
