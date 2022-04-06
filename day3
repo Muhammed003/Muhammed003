@@ -1,6 +1,51 @@
-# ! Task 1
-# a = {'x': 1, 'y': 2, 'z': 1}
-# dict_ = []
+# ? second_trick
+# a = {'a': 1, 'b': 2, 'c': 1}
+# list_ = []
 # for keys in a.keys():
-#     dict_.append(keys)
-# print(dict_[0])
+#     list_.append(keys)
+# print(list_)
+
+
+# ! Task 6
+
+# a = {'a': 1, 'b': 2, 'c': 1}
+# b = a.copy()
+# print(b)
+
+# ! Task 7
+
+# a = {'a': 1, 'b': 2, 'c': 1}
+# list_ = []
+# for k in a:
+#     list_.append(k)
+# print(*list_)
+
+# ! Task 8
+
+# a = {'a': 1, 'b': 2, 'c': 1}
+# list_ = []
+# for key, val in a.items():
+#     list_.append(val)
+# print(*list_)
+
+# ! Task 9
+
+# a = {'a': 1, 'b': 4, 'c': 1, 'd': 5, 'e': 6}
+# b = {'a': 1, 'b': 2, 'c': 1, 'd': 5,  'e': 2}
+# new_dict ={}
+# for k, v in list(a.items()):
+#      if v % 2 == 0:
+#          new_dict.update({k: 2})
+#      else :
+#          new_dict.update({k: v})
+# print(new_dict)
+
+# ! Task 10
+# a = {'a': None, 'b': 1, 'c': 2, 'd': None, 'e': 3}
+# new_dict = {}
+# for k, v in list(a.items()):
+#     if not  v:
+#         del a[k]
+#     else:
+#         new_dict.update({k: v})
+# print(new_dict)
