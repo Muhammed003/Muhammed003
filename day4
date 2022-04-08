@@ -1,4 +1,32 @@
-n = int(input())
-dict_old = {key: key for key in range(n, 500, n)}
-dict_ = {key: val**2 for key, val in dict_old.items()}
-print(dict_)
+# ! task 13
+
+# string_ = 'In 1984 there were 13 instances of a protest with over 1000 people attending'
+# list_ = [x for x in string_.split(" ") if x.isdigit()]
+# print(list_)
+
+# ! task 14
+
+# dict_ = {'Timur': {'history': 90, 'math': 95, 'literature': 91},
+
+#          'Olga': {'history': 92, 'math': 96, 'literature': 81},
+
+#          'Nik': {'history': 84, 'math': 85, 'literature': 87}}
+# new_dict = {name: it for name, n1 in dict_.items()
+#             for it, maxx in n1.items() if maxx == max(n1.values())}
+# print(new_dict)
+
+# ! task 15
+# my_dict = {'first': {'a': 1}, 'second': {'b': 2}}
+# dict_ = {name: a1 for name,n1 in my_dict.items() for a1 in n1.values()}
+# print(dict_)
+# ! Extra task 1
+
+# list_ = [i/2 for i in range(0, 11, 2)]
+# print(list_)
+
+# ! Extra task 2
+# dict_ = {1: 'Hello', 2: 'World', 3: 'John'}
+# dict_ = {1: 'Hello', 2: 'World', 3: 'John'}
+# list_ = {key: len(val) if key % 2 == 0 else len(val)**3 for key, val in dict_.items()}
+# print(list_)
+# ! Extra task 3
