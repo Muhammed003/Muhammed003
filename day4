@@ -1,0 +1,4 @@
+n = int(input())
+dict_old = {key: key for key in range(n, 500, n)}
+dict_ = {key: val**2 for key, val in dict_old.items()}
+print(dict_)
