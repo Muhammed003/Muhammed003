@@ -1,0 +1,78 @@
+
+# ! classroom task 1
+# from math import sqrt
+# list_ = [4 , True, "makers", "alex", 45, 67, 8, 100, 34, False]
+# new_list = list(map(lambda z: round(sqrt(z)), filter(lambda y: type(y) == int, list_)))
+# print(new_list)
+
+# ! classroom task 2
+# name_of_students = [{'name': 'Alex', 'point': 85},
+#                     {'name': 'Max', 'point': 59},
+#                     {'name': 'Alice', 'point': 100},
+#                     {'name': 'John', 'point': 45},
+#                     {'name': 'Anna', 'point': 55}
+#                     ]
+# list_ = list(filter(lambda x: x['point'] < 60, name_of_students))
+# names = list(map(lambda x: x['name'], list_))
+# points = list(map(lambda x: x['point'], list_))
+# zipping = list(zip(names, points))
+
+# expelled_list = list(map(lambda x: f'You are gonna be expelled {x[0]}.', zipping))
+# print(expelled_list)
+# ! classroom task 3
+# import functools
+# leters = ['R', 'a', 'y', 'c', 'h', 'e', 'l']
+# str_  =functools.reduce(lambda x, y: x+y, leters)
+# print(str_)
+# ! task 1
+
+# import functools
+# list_ = [1, 2, 3, 4]
+# result = sum(list_)
+# # result = functools.reduce(lambda x, y: x + y, list_)
+# print(result)
+# ! task 2
+# list_ = [1, 5, -9, 6, -4]
+# result = all(i  if i > 3 else False for i in list_)
+# print(result)
+# ! task 3
+
+# list_ = [5, 8, 4, 6, 7]
+# result = any(i  if i < 0 else False for i in list_)
+# print(result)
+
+# ! task 4
+# list_ = [1, 2, 3, 4]
+# result = list((map(lambda x: x*x, list_) ))
+# print(result)
+# ! task 5
+# list_ = [1, 2, 3, 4]
+# result = list(filter(lambda x: x % 2 == 0, list_))
+# print(result)
+# ! task 6
+# list_ = ['inheritance', 'solid', 'polymorphism', 'dry', 'yagni',]
+# result = list(filter(lambda x: len(x) > 7, list_))
+# print(result)
+# ! task 7
+# import functools
+# list_ = [5, 6, 7, 8]
+# result = functools.reduce(lambda x,y: x*y, list_)
+# print(result)
+# ! task 8
+# list_ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# list2 = list(filter(lambda x:  (x % 2 == 0), list_))
+# list3 = list(filter(lambda x:  (x % 2 != 0), list_))
+# result = f"even: {len(list2)}, odd: {len(list3)}"
+# print(result)
+
+# ! task 9
+
+# list_ = [-1, 2, 3, 5, -3, 7]
+# result = list(map(lambda x: True if x > 0 else False, list_))
+# print(result)
+
+# ! task 10
+# import functools
+# list_ = ['Paul', 'George', 'Ringo', 'John']
+# result = functools.reduce(lambda a, b: b if len(a) < len(b) else a, list_)
+# print(result)
