@@ -1,7 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
+from urllib import response
 import csv
+"""
+Вы можете изменить категории и все работать будеть попробуйде например:
+https://kg.wildberries.ru/catalog/elektronika/igry-i-razvlecheniya/aksessuary/garnitury
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!изменил на !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+https://kg.wildberries.ru/catalog/elektronika/smart-chasy
 
+попробуйте
+"""
 URL = "https://kg.wildberries.ru/catalog/elektronika/igry-i-razvlecheniya/aksessuary/garnitury"
 def get_html(url: str): 
 	html = requests.get(url=URL)
@@ -17,9 +25,10 @@ def write_to_csv(data: list) -> None:
 	"""Запись в csv формате"""
 	with open("data/info.csv", "w") as file:
 		writer = csv.writer(file)
-		writer.writerow(["name", "price", "description", "image"])
+		writer.writerow(["id","name", "price", "description", "image"])
 		for item in data:
-			writer.writerow([item.get("name"), 
+			writer.writerow([item.get("id"), 
+								  item.get("name"),
 								  item.get("price"),
 								  item.get("description"),
 								  item.get("image")]
@@ -29,7 +38,7 @@ def write_to_csv(data: list) -> None:
 
 
 DATA = []
-def get_description(url, name, price):
+def get_description(url, name, price, id_):
 	URL = url
 	html2 = requests.get(URL).text
 	soup2 = BeautifulSoup(html2, 'lxml')
@@ -42,7 +51,8 @@ def get_description(url, name, price):
 		image = "https:"+image
 	except:
 		image = ''
-	dep = {"name": name, 
+	dep = {"id": id_, 
+		"name": name, 
 		"price": price, 
 		"description": description, 
 		"image": image
@@ -54,11 +64,13 @@ def get_description(url, name, price):
 # 	with open(f"data/image/{name}.jpg", "wb") as file:
 # 		file.write(response.content)
 
-
+s = 0
 def get_data(html):
 	soup = BeautifulSoup(html, 'lxml')
 	all_things = soup.find("div", class_="product-card-list").find_all('div', class_="product-card j-card-item")
+	global s
 	for cards in all_things:
+		s+=1
 		try:
 			price = cards.find('div', class_="product-card__price j-cataloger-price").find('ins', class_='lower-price').text
 			# print(price)
@@ -74,9 +86,9 @@ def get_data(html):
 			link = "https://kg.wildberries.ru" + link
 		except:
 			link = ''
+		id_ = s
 		
-		
-		get_description(link, name, price)
+		get_description(link, name, price, id_)
 		
 def main():
 	html = get_html(url = URL)
