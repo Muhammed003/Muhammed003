@@ -98,3 +98,4 @@ def main():
 		get_data(html=html)
 	write_to_csv(DATA)
 main()
+# mains
