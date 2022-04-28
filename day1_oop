@@ -1,0 +1,234 @@
+
+#! classroom task1
+# import random
+# class Sniper:
+#     def __init__(self, name):
+#         self.name = name
+#         self.health = 100
+
+#     def shoot(self, sniper):
+#         sniper.health -= 20
+
+# sniper1 = Sniper("Alex")
+# sniper2 = Sniper("Max")
+
+# choices = (sniper1, sniper2)
+# while True:
+#     shooter = random.choice(choices)
+#     if shooter == sniper1:
+#         shot = sniper2
+#     else:
+#         shot = sniper1
+#     shooter.shoot(shot)
+#     print(f"Shooter {shooter.name} is shooting, {shot.name} has {shot.health} health points")
+#     if sniper1.health == 0:
+#         print(f"{sniper1.name} is dead. {sniper2.name} won !!!")
+#         break
+#     elif sniper2.health == 0:
+#         print(f"{sniper2.name} is dead. {sniper1.name} won !!!")
+#         break
+#     else:
+#         continue
+#! classroom task 2
+# class Hogwarts:
+#     faculties_qualities = {'courage': 'Gryffindor',
+#                            'intelligence': 'Ravenclaw',
+#                            'justice': 'Hufflepuff',
+#                            'ambition': 'Slytherin'
+
+#     }
+
+#     def __init__(self, courage, intelligence, justice,ambition):
+#         self.courage = courage
+#         self.intelligence = intelligence
+#         self.justice = justice
+#         self.ambition = ambition
+#         self.qualities_dictionary = locals()
+#     def sorting_hat(self):
+#         dict_ = {val:key for key,val in self.qualities_dictionary.items()  if type(val)== int}
+#         maximum_point = max(dict_.keys())
+#         maximum_quality = dict_[maximum_point]
+#         self.faculty = Hogwarts.faculties_qualities[maximum_quality]
+#         print(f'{self.faculty}')
+# student1 = Hogwarts(courage=5, intelligence=8, justice=3, ambition=9)
+# student1.sorting_hat()
+# student2 = Hogwarts(courage=4, intelligence=7, justice=3, ambition=2)
+# student2.sorting_hat()
+# student3 = Hogwarts(courage=6, intelligence=8, justice=9, ambition=2)
+# student3.sorting_hat()
+# student4 = Hogwarts(courage=9, intelligence=7, justice=3, ambition=2)
+# student4.sorting_hat()
+
+# ! task 1
+
+# class Song:
+#     def __init__(self, title, author, year):
+#        self.title = title
+#        self.author = author
+#        self.year = year
+#     def show_title(self):
+#        print(f"Название этой песни {self.title}")
+#     def show_author(self):
+#         print(f"Автор этой песни {self.author}")
+#     def show_year(self):
+#         print(f"Эта песня вышла в {self.year} году")
+# song = Song('Song', 'Singer', 2000)
+# song.show_title()
+# song.show_author()
+# song.show_year()
+# ! task 2
+# class Circle:
+#     color = "Синий"
+#     pi = 3.14
+#     def __init__(self, radius):
+#         self.radius = radius
+#     def get_area(self):
+#         return self.pi*(self.radius**2)
+# circle = Circle(2)
+# print(circle.get_area())
+# circle.color = "green"
+# print(circle.color)
+# ! task 3
+
+# class BankAccount:
+#     balance = 0
+#     def __init__(self) -> None:
+#         self.balance
+#     def deposit(self, amount):
+#         self.balance = amount
+#         print (f"Ваш баланс: {self.balance} сом")
+#     def withdraw(self, amount):
+#         self.balance -= amount
+#         print (f"Ваш баланс: {self.balance} сом")
+# account = BankAccount()
+# account.deposit(1000)
+# account.withdraw(500)
+
+# ! task 4
+# class Taxi:
+#     def __init__(self, name, cost, cost_km) -> None:
+#         self.name = name
+#         self.cost = cost
+#         self.cost_km = cost_km
+#     def get_total_cost(self, km):
+#         return f"Такси {self.name}, стоимость поездки: {self.cost+ (self.cost_km*km)} сом"
+# taxi1 = Taxi("Такси Namba", 35, 12)
+# taxi2 = Taxi("Такси Yandex", 30, 13)
+# taxi3 = Taxi("Такси Jorgo", 25, 12)
+
+# print(taxi1.get_total_cost(10))
+# print(taxi2.get_total_cost(6))
+# print(taxi3.get_total_cost(14))
+# ! task 5
+# class Phone:
+#     def __init__(self, name, last_name, phone) -> None:
+#        self.name =  name
+#        self.last_name = last_name
+#        self.phone = phone
+#     def get_info(self):
+#         print(f"Контакт: {self.name} {self.last_name}, телефон: {self.phone}")
+# contact = Phone("john", "Snow", "+996707707707")
+# contact.get_info()
+# ! task 6
+# class Salary:
+#     percent =8
+#     def __init__(self, salary, experience):
+#         self.salary = salary
+#         self.experience = experience
+#     def count_percent(self):
+#         return (self.experience*self.salary / 100) * self.percent
+# obj = Salary(10000, 10)
+# print(obj.count_percent())
+# ! task 7
+# from datetime import datetime
+# class Nobel:
+#     def __init__(self, object, year, name):
+#         self.category = object
+#         self.year = year
+#         self.winner = name
+
+#     def get_year(self):
+#         year = datetime.now().year - self.year
+#         return f"выиграл {year} лет назад"
+
+
+# winner1 = Nobel("Литература", 1971, "Пабло Неруда")
+# print(winner1.category, winner1.year, winner1.winner)
+# print(winner1.get_year())
+
+
+# winner2 = Nobel("Литература", 1994, "Кэндзабуро Оэ")
+# print(winner2.category, winner2.year, winner2.winner)
+# print(winner2.get_year())
+
+# ! task 8
+
+class Password:
+    def __init__(self, password):
+        self.password = password
+
+    def __str__(self):
+        return f"{len(self.password) * '*'}"
+
+    def validate(self):
+        password = self.password
+        list_symbols = ['@', '#', '&', '$', '%', '!', '~', '*']
+        if len(password) < 8 or len(password) > 15:
+            return(f"Password should be longer than 8, and less than 15")
+        else:
+            if not any(char.isdigit() for char in password):
+                return(f"Password should contain numbers too")
+            elif not any(char.isalpha() for char in password):
+                return(f"Password should contain letters as well")
+            elif not any(char in list_symbols for char in password):
+                return(f"Your password should have some symbols")
+            else:
+                return(f"Ваш пароль сохранен.")
+
+
+password = Password("Литера1234!!")
+password.validate()
+# ! task 9
+# class Math:
+#     def __init__(self, number):
+#         self.num = number
+
+#     def get_factorial(self):
+#         number1 = 1
+#         for i in range(1, self.num+1):
+#             number1 *= i
+#         return number1
+
+#     def get_sum(self):
+#         num = list(str(self.num))
+#         num = sum([int(i) for i in num])
+#         return num
+
+#     def get_mul_table(self):
+#         multable = ''
+#         for i in range(1, 11):
+#             multable += f"{self.num}x{i}={self.num*i}\n"
+#         return multable
+
+
+# math = Math(0)
+# print(math.get_factorial())
+# print(math.get_sum())
+# print(math.get_mul_table())
+# ! task 10
+
+# class ToDo:
+#     instances = {1: None, 2: None, 3: None}
+
+#     def __init__(self, num1):
+#         self.instances[1] = num1
+#         pass
+
+#     def give_priority(self):
+#         return self.instances
+#     # def list_of_tasks():
+#         ...
+
+
+# name = ToDo('сходить в кино')
+# print(name.give_priority())
