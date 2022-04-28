@@ -1,0 +1,338 @@
+
+# ! classroom task _ 1
+# import functools
+# def repeat(num):
+#     def decorator(function):
+#         def wrapper(function):
+#             for i in range(num):
+#                 print(function)
+#             return function
+#         return wrapper
+#     return decorator
+
+
+# @repeat(num=4)
+# def function(name):
+#     print(f"{name}")
+# function("Python")
+# ! classroom task _ 2
+# def countdown(seconds):
+#     def decorator(func):
+#         def wrapper():
+#             for i in range(seconds, 0, -1):
+#                 print(i)
+#             func()
+#             return func
+#         return wrapper
+#     return decorator
+
+
+# @countdown(seconds=5)
+# def func():
+#     print('Hello world')
+
+
+# func()
+
+# ! task1
+# def call_function(func):
+#     def wrapper():
+#         ` print(f"Вызываю функцию {func.__name__}")
+#             func()
+#             print(f"Вызов функции {func.__name__} прошёл успешно")`
+#     return wrapper
+# @call_function
+# def first():
+#     print("hello world")
+#     return "hello world"
+# first()
+# ! task 2
+# from datetime import datetime
+# def func_start_time(func):
+#     date = datetime.now()
+#     def wrapper():
+# print(f"Функция запущена {date.strftime('%d.%m.%Y %H:%M')}")
+#         func()
+#     return wrapper
+# @func_start_time
+# def func():
+#     print('Hello world')
+# func()
+
+# ! task 3
+# def make_bold(func):
+#     def wrapper():
+#         return (f"<b>{func()}</b>")
+#     return wrapper
+
+
+# def make_italic(func):
+#     def wrapper():
+#         return (f"<i>{func()}</i>")
+#     return wrapper
+
+# def make_underline(func):
+#     def wrapper():
+#         return (f"<u>{func()}</u>")
+#     return wrapper
+
+# @make_bold
+# @make_italic
+# @make_underline
+# def hello():
+#     return 'Hello world'
+
+# print(hello())
+# ! task 4
+# from time import time
+# def benchmark(func):
+#     def wrapper():
+#         start = time()
+#         end = time()
+#         return f"Время выполнения: {end-start} секунд."
+#     return wrapper
+# @benchmark
+# def fetch_webpage():
+#   import requests
+#   webpage = requests.get('https://google.com')
+# print(fetch_webpage())
+# ! task 5
+# users = {"Max": "password11"}
+
+
+# def validate_password():
+#     def wrapper(**kwargs):
+#         print(kwargs)
+#     wrapper("Max", "password")
+
+
+# print(validate_password())
+
+# @validate_password
+# def login(username, password):
+#         print(f'Welcome, {username}')
+# login("Max", "password")
+# ! task 6
+# def is_admin(*args, **kwargs):
+#     def wrapper(*args):
+#         d = args[0]["username"]
+#         if args[0]["is_admin"] == True:
+#             print(f"Доступ разрешен {d}")
+#         else:
+#             print(f"Доступ запрещен {d}")
+#     return wrapper
+
+# @is_admin
+# def get_user(dict):
+#     return dict
+
+
+# get_user({'username': 'john133', 'is_admin': True})
+# get_user({'username': 'jane133', 'is_admin': False})
+
+
+# ! task 7
+# def route(get_page):
+#     URL = "https://www.mywebsite.com/"
+#     def wrapper(get_page):
+#         return URL+get_page
+#     return wrapper
+# @route
+# def get_page(path):
+#      return path
+
+# print(get_page('about/'))
+# print(get_page('products/'))
+# ! task 8
+# from operator import itemgetter
+# def sort_names(func):
+#     def wrapper(person):
+#         person=sorted(person,key=itemgetter(2))
+#         return func(person)
+#     return wrapper
+# @sort_names
+# def prefix_name(person):
+#     return ["Mr. "+human[0]+' '+human[1] if human[-1]=='M' else "Ms. "+human[0]+' '+human[1] for human in person]
+# print(prefix_name([('Leo', 'Nimoy', 40, 'M'),
+#       ('Carrie', 'Fisher', 35, 'F'),
+#       ('Harrison', 'Ford', 38, 'M')]))
+# ! task 9
+# def get_full_number(func):
+#      def decorator(list_):
+#         def wrapper(list_) -> list:
+#             for i in list_:
+#                 i = i.strip("0")
+#                 list_= (f'+996 {i[0]}{i[1]}{i[2]} {i[3]}{i[4]}{i[5]}{i[6]}{i[7]}{i[8]}')
+#             print(func())
+#             return func
+#         return wrapper
+#      return decorator
+# @get_full_number
+# def sort_phone_nums(list_):
+#     print(list_)
+
+
+# sort_phone_nums(['0777987456', '0555123456', '0770369852'])
+
+
+# ! code.py
+# def func():
+#     def func2():
+#         return "привет я функция func2"
+#     return func2
+
+# some_func = func()
+# # print(some_func)
+# print(some_func())
+# def func(func):
+#     print("вызов функции func()")
+#     func()
+# def func2():
+#     print("вызов функции func()")
+# func(func2)
+# def decorator(func): # *-> Функция декоратор она принимает в качестве аргумента функция
+#     def wrapper(): #  *-> Функция обертка
+#         print("Я код которые сработал до вызова функции")
+#         func()
+#         print("Я код которые сработал после вызова функции")
+#     return wrapper # *-> обязательно нужно возвращать !!!
+# @decorator
+# def func():
+#     print("Я функция которую вызвали")
+# func()
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+# def bread(func):
+#     def wrapper():
+#         print("---Хлеб---")
+#         func()
+#         print("---Хлеб---")
+#     return wrapper
+# def ingradients(func):
+#     def wrapper():
+#         print("---Лук---")
+#         func()
+#         print("---Лист салад---")
+#     return wrapper
+# @bread
+# @ingradients
+# def sandvich():
+#     print("---котлета---")
+# sandvich()
+
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+# def decorator(func):
+#     def wrapper(a, b):
+#         print("Это сложение двух чисел")
+#         print(func(a,b))
+#     return wrapper
+# @decorator
+# def sum_to(a, b):
+#     return a + b
+# sum_to(5,5)
+# def benchmark(func):
+#     from time import time
+#     def wrapper():
+#         start = time()
+#         func()
+#         end = time()
+
+#         print(f"Функция отработал за {end-start} секунд")
+#     return wrapper
+# @benchmark
+# def get_html():
+#     import requests
+#     requests.get("https://google.com")
+# get_html()
+
+# @benchmark
+# def range_hudred():
+#     for i in range(10000000):
+#         pass
+# range_hudred()
+# ! CHecking web-site speed
+# def checktime(func):
+#     from time import time
+#     def wrapper(**kwargs):
+#         start = time()
+#         func(**kwargs)
+#         end = time()
+#         print(f"Функция отработал за {end-start} секунд")
+#     return wrapper
+# @checktime
+# def get_response(**kwargs):
+#     print(kwargs)
+#     import requests
+#     requests.get(url=kwargs["url"])
+# get_response(url = "https://youtube.com")
+# get_response(url = "https://ts.kg")
+# get_response(url = "https://azattyk.kg")
+
+# ? \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+# def decorator(func):
+#     def wrapper(*args, **kwargs):
+#         print(f"Это кортеж {args}")
+#         print(f"Это словарь {kwargs}")
+#         func(*args, **kwargs)
+#     return wrapper
+
+# @decorator
+# def func():
+#     print("Обычная функция без аргументов")
+
+# @decorator
+# def func1(url):
+#     print("С параметром обязательными")
+
+# @decorator
+# def func2(url, method):
+#     print("С параметром обязательными")
+# func()
+# func1("https://google.com")
+# func2(url = "https://youtube.com", method="get")
+# ? \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+# def decorator_main():
+#     print("I am first decorator")
+#     def decoratior(func):
+#         print("I am decorator")
+#         def wrapper():
+#             print("I am wrapper")
+#             func()
+#         return wrapper
+#     return decoratior
+
+# @decorator_main()
+# def func():
+#     print("I am regular function")
+# func()
+# ? \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+# def check_email(emails: list) -> bool:
+#     def decorator(func):
+#         def wrapper(email: str):
+#             if any(email.endswith(email1) for email1 in emails):
+#                 return func(email)
+#             return False
+#         return wrapper
+#     return decorator
+
+# @check_email(["@gmail.com", "@yandex.ru"])
+# def is_email(email: str) -> bool:
+#     if "@" in email:
+#         return True
+#     return False
+# email  = input("Enter email: ")
+# if is_email(email=email):
+#     print("Your email is correct")
+# else:
+#     print("Your email incorrect")
+list_symbols = ['@', '#', '&', '$', '%', '!', '~', '*']
+password="123456@a"
+a =''
+for i in password:
+	print(i)
+	if i in list_symbols:
+		a =  True
+	else:
+		a = "error"
+print(a)
