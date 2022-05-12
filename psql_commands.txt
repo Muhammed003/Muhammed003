@@ -1,0 +1,13 @@
+PK id <--------- FK id_table_name
+INNER JOIN
+RIGHT OUTER JOIN
+LEFT OUTER JOIN
+FULL OUTER JOIN
+
+SELECT user.name order.quantity FROM order INNER JOIN user ON order.id_user = user.id;
+
+
+SELECT u.name o.quantity FROM order AS o INNER JOIN user AS u ON o.id_user = u.id;
+
+SELECT u.name p.title, o.quantity FROM order_item AS oi INNER JOIN products AS p ON oi.id_users = p.id INNER JOIN orders AS o On oi.id_order = o.id INNER JOIN users AS u ON o.id_users = u.id;
+
